@@ -7,11 +7,15 @@ import BarChart from "../../Components/BarChart/BarChart";
 import CircleChart from "../../Components/CircleChart/CircleChart";
 import LineChart from "../../Components/LineChart/LineChart";
 import HexaChart from "../../Components/HexaChart/HexaChart";
+import SelectUser from "../../Components/SelectUser/SelectUser";
 
 export default function Home() {
   return (
     <div className="dashboard-container">
-      <User />
+      <div className="user-container">
+        <User />
+        <SelectUser />
+      </div>
       <div className="dashboard-all-infos-container">
         <div className="charts-container">
           <BarChart />

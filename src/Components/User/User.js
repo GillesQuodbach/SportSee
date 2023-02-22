@@ -3,7 +3,7 @@ import "./User.css";
 
 export default function User() {
   return (
-    <div className="user-container">
+    <div className="user-greet-container">
       <p className="user-name">
         Bonjour <b className="name">Thomas</b>
       </p>

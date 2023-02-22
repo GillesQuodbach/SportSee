@@ -7,6 +7,17 @@
   width: 100%;
 }
 
+.user-container {
+  display: flex;
+  background-color: antiquewhite;
+  width: max-content;
+  height: min-content;
+}
+
+.select-user-container {
+  margin-left: 200px;
+}
+
 .charts-container {
   background-color: blanchedalmond;
 }
