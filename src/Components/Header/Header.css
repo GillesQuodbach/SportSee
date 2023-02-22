@@ -1,0 +1,29 @@
+.header {
+  background-color: #020203;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+.logo {
+  margin-left: 30px;
+  width: 178px;
+}
+
+.navbar {
+  margin-right: 90px;
+}
+
+.nav-link-item {
+  display: flex;
+  display: inline;
+  margin-left: 200px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.nav-link-item a {
+  color: #fff;
+}
