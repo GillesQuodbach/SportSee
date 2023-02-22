@@ -1,0 +1,11 @@
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 260px;
+}
+
+.summary-component {
+  background-color: blueviolet;
+  height: 125px;
+}

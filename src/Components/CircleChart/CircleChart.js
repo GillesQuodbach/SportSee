@@ -1,8 +1,6 @@
-import React from 'react'
-import './CircleChart.css'
+import React from "react";
+import "./CircleChart.css";
 
 export default function CircleChart() {
-  return (
-    <div>CircleChart</div>
-  )
+  return <div className="circlechart-component">CircleChart</div>;
 }

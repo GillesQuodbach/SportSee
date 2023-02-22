@@ -15,6 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.body-container {
+  display: flex;
+}
+
 a {
   text-decoration: none;
 }

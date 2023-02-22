@@ -1,0 +1,27 @@
+.dashboard-container {
+  background-color: grey;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 65px;
+  padding-bottom: 85px;
+  width: 100%;
+}
+
+.charts-container {
+  background-color: blanchedalmond;
+}
+
+.dashboard-all-infos-container {
+  margin-top: 80px;
+  display: flex;
+}
+
+.mini-charts-container {
+  display: flex;
+  margin-top: 30px;
+}
+
+.summary-container {
+  background-color: aquamarine;
+  justify-content: space-between;
+}

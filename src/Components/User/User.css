@@ -1,0 +1,21 @@
+.user-container {
+  background-color: antiquewhite;
+  width: max-content;
+  height: min-content;
+}
+
+.user-name {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 24px;
+}
+
+.name {
+  color: red;
+}
+
+.user-greet {
+  font-size: 18px;
+  font-weight: 400;
+}

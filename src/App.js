@@ -7,8 +7,10 @@ export default function App() {
   return (
     <>
       <Header />
-      <SideBare />
-      <Outlet />
+      <div className="body-container">
+        <SideBare />
+        <Outlet />
+      </div>
     </>
   );
 }
