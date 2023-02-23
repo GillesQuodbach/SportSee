@@ -10,11 +10,7 @@
   padding-bottom: 60px;
 }
 
-.sidebar-link-container {
-  margin-bottom: 160px;
-}
-.sidebar-link-item {
-  list-style-type: none;
+.sidebar-icon {
   margin-bottom: 20px;
 }
 
@@ -24,4 +20,5 @@
   color: #fff;
   font-size: 24px;
   font-weight: 500;
+  margin-top: 160px;
 }

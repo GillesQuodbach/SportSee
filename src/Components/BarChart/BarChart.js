@@ -1,57 +1,112 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   BarChart,
   Bar,
-  Cell,
-  XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
+  XAxis,
+  YAxis,
   Legend,
+  Label,
+  ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
-import {
-  USER_MAIN_DATA,
-  USER_ACTIVITY,
-  USER_AVERAGE_SESSIONS,
-  USER_PERFORMANCE,
-} from "../../context/fulldata";
-
+import fulldata from "../../context/fulldata";
+import blackIcon from "../../Assets/Icons/blackIcon.svg";
+import redIcon from "../../Assets/Icons/redIcon.svg";
+import { DashboardContext } from "../../context/DashboardContext";
 // Xaxis = id parametre
 // Yaxis = caolires brulée et poids
 export default function Chart() {
-  const newData = USER_ACTIVITY[0].sessions;
-  const data = [
-    { name: "Facebook", value: 200000 },
-    { name: "Twitter", value: 2000000 },
-    { name: "Instagram", value: 300000 },
-    { name: "Telegram", value: 205500 },
-  ];
-  console.log(data);
-  console.log(newData);
+  const userID = fulldata.USER_ACTIVITY[0].userId; // ici user12
+  const userSessions = fulldata.USER_ACTIVITY[1].sessions; // ici user12
+
+  const [data, setData] = useState(fulldata.USER_ACTIVITY.userId);
+
+  const { dataChart, changeUser, userData } = useContext(DashboardContext);
+
+  //Transformation de la date en id
+  for (let i = 0; i < userSessions.length; i++) {
+    userSessions[i].day = i + 1;
+  }
 
   return (
-    <div className="chart">
-      <h1>Test chart</h1>
+    <>
+      <div className="barchart-header">
+        <h2 className="barchart-header-title">Activité quotidienne</h2>
+        <div className="barchart-legend-container">
+          <div className="barchart-kilo-legend">
+            <img className="barchart-kilo-legend-icon" src={blackIcon} alt="" />
+            <p className="barchart-kilo-legend-text">Poids (kg)</p>
+          </div>
+          <div className="barchart-calo-legend">
+            <img className="barchart-calo-legend-icon" src={redIcon} alt="" />
+            <p className="barchart-calo-legend-text">Calories brûlées (kCal)</p>
+          </div>
+        </div>
+      </div>
       <BarChart
-        width={835}
+        barGap={8}
+        barCategoryGap={32}
+        width={830}
         height={320}
-        data={newData}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
+        data={userSessions}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis tickCount={10} dataKey="kilogram" />
-        <YAxis orientation="right" dataKey="calories" />
+        <XAxis
+          dataKey={"day"}
+          tickLine={false}
+          tick={{ fontSize: 14 }}
+          stroke="#9B9EAC"
+        />
+        <YAxis
+          yAxisId={"kilograph"}
+          type="number"
+          dataKey={"kilogram"}
+          orientation="right"
+          tickLine={false}
+          axisLine={false}
+          tick={{ fontSize: 12 }}
+          stroke="#9B9EAC"
+          tickCount={5}
+          domain={["dataMin - 2", "dataMax + 1"]}
+        ></YAxis>
+        <YAxis
+          yAxisId={"calograph"}
+          type="number"
+          dy={15} //margin en y des chiffres
+          // domain={["dataMin", "dataMax"]}
+          dataKey={"calories"}
+          tickLine={false}
+          axisLine={false}
+          tick={{ fontSize: 0 }}
+          stroke="#9B9EAC"
+          domain={["dataMin - 20", "dataMax + 10"]}
+        />
+        <CartesianGrid
+          strokeDasharray="1 1"
+          horizontal={true}
+          vertical={false}
+        />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#E60000" />
-        <Bar dataKey="calories" fill="#282D30" />
+        <Bar
+          yAxisId={"kilograph"}
+          barSize={7}
+          name="Poids (kg)"
+          dataKey="kilogram"
+          fill="#282D30"
+          radius={[50, 50, 0, 0]}
+          legendType="circle"
+        />
+        <Bar
+          yAxisId={"calograph"}
+          barSize={7}
+          name="Calories brûlées (kCal)"
+          dataKey="calories"
+          fill="#E60000"
+          radius={[50, 50, 0, 0]}
+          legendType="circle"
+        />
       </BarChart>
-    </div>
+    </>
   );
 }

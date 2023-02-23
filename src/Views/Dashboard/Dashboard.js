@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./Dashboard.css";
 import { useState, useContext } from "react";
 import User from "../../Components/User/User";
 import Summary from "../../Components/Summary/Summary";
@@ -9,7 +9,7 @@ import LineChart from "../../Components/LineChart/LineChart";
 import HexaChart from "../../Components/HexaChart/HexaChart";
 import SelectUser from "../../Components/SelectUser/SelectUser";
 
-export default function Home() {
+export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="user-container">
