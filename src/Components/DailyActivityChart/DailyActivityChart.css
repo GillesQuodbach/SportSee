@@ -1,0 +1,55 @@
+.barchart-main-container {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+}
+
+.barchart-header {
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barchart-header-title {
+  font-size: 15px;
+  font-weight: 500s;
+  margin-left: 70px;
+}
+
+.barchart-legend-container {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #74798c;
+  margin-right: 50px;
+}
+
+.barchart-kilo-legend,
+.barchart-calo-legend {
+  display: flex;
+}
+
+.barchart-kilo-legend-text,
+.barchart-calo-legend-text {
+  margin-left: 10px;
+}
+
+.custom-tooltip {
+  width: 40px;
+  height: 65px;
+  background-color: #e60000;
+  color: #fff;
+  padding: 4px 6px 4px 6px;
+  font-size: 7px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+[role="dialog"] {
+  outline: none;
+}

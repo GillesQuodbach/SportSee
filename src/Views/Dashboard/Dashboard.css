@@ -1,8 +1,8 @@
 .dashboard-container {
-  padding-left: 100px;
+  padding-left: 110px;
   padding-right: 100px;
   padding-top: 65px;
-  width: 100%;
+  width: 1420px;
 }
 
 .user-container {
@@ -14,48 +14,16 @@
   margin-left: 200px;
 }
 
+.select-user-container select {
+  margin-left: 20px;
+}
+
 .dashboard-all-infos-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
   gap: 30px;
-}
-
-.charts-container {
-  width: 100%;
-}
-
-.barchart-header {
-  margin-bottom: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.barchart-header-title {
-  font-size: 15px;
-  font-weight: 500s;
-  margin-left: 70px;
-}
-
-.barchart-legend-container {
-  display: flex;
-  gap: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #74798c;
-  margin-right: 100px;
-}
-
-.barchart-kilo-legend,
-.barchart-calo-legend {
-  display: flex;
-}
-
-.barchart-kilo-legend-text,
-.barchart-calo-legend-text {
-  margin-left: 10px;
 }
 
 .mini-charts-container {
@@ -65,6 +33,6 @@
 }
 
 .summary-container {
-  background-color: aquamarine;
   justify-content: space-between;
+  min-width: 250px;
 }

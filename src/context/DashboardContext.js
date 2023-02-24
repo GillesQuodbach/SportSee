@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import fulldata from "./fulldata";
+import fulldata from "./mockedData";
 
 //Création du context
 export const DashboardContext = createContext();
