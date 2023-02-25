@@ -1,6 +1,8 @@
 .barchart-main-container {
   background-color: #fbfbfb;
   border-radius: 5px;
+  width: 830px;
+  height: 320px;
 }
 
 .barchart-header {
@@ -12,7 +14,7 @@
 
 .barchart-header-title {
   font-size: 15px;
-  font-weight: 500s;
+  font-weight: 500;
   margin-left: 70px;
 }
 

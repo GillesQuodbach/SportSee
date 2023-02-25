@@ -11,9 +11,26 @@ import {
 } from "recharts";
 import mockedData from "../../context/mockedData";
 
+const CustomTooltip = ({ payload, active }) => {
+  if (active) {
+    return (
+      <div className="linechart-custom-tooltip-container">
+        <p className="linechart-custom-tooltip-container">
+          {payload[0].value}min
+        </p>
+      </div>
+    );
+  }
+  return null;
+};
+
+const CustomLegend = ({ payload }) => {
+  <h1>${payload}</h1>;
+};
+
 export default function AverageSessionChart() {
   const userAverageSessionsArray = mockedData.USER_AVERAGE_SESSIONS[0].sessions;
-
+  console.log(userAverageSessionsArray);
   const userAverageSessionsArrayFormat = userAverageSessionsArray.map(
     (data) => {
       switch (data.day) {
@@ -38,62 +55,52 @@ export default function AverageSessionChart() {
     }
   );
 
-  const CustomTooltip = ({ payload, active }) => {
-    if (active) {
-      return (
-        <div className="linechart-custom-tooltip-container">
-          <p className="linechart-custom-tooltip-container">
-            {payload[0].value}min
-          </p>
-        </div>
-      );
-    }
-    return null;
-  };
   //Transformation des chiffres en lettre du jour de la semaine
 
   return (
-    <ResponsiveContainer
-      className={"linechart-main-container"}
-      width={260}
-      height={260}
-    >
-      <LineChart
-        className="average-session-linechart"
-        data={userAverageSessionsArrayFormat}
-        onMouseMove={(e) => {
-          if (e.isTooltipActive === true) {
-            let div = document.querySelector(".average-session-linechart");
-            let windowWidth = div.clientWidth;
-            let mouseXpercentage = Math.round(
-              (e.activeCoordinate.x / windowWidth) * 100
-            );
-            // @ts-ignore
-            div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
-          }
-        }}
-      >
-        <XAxis
-          type="category"
-          dataKey={"day"}
-          tickLine={false}
-          axisLine={false}
-        />
-        <YAxis
-          dataKey={"sessionLength"}
-          tickLine={false}
-          axisLine={false}
-          tickCount={0}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="sessionLength"
-          stroke="#82ca9d"
-          strokeWidth={2}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div className="mini-linechart-container">
+      <p className="mini-linechart-text">Durée moyenne des sessions</p>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          className="average-session-linechart"
+          data={userAverageSessionsArrayFormat}
+          onMouseMove={(e) => {
+            if (e.isTooltipActive === true) {
+              let div = document.querySelector(".average-session-linechart");
+              let windowWidth = div.clientWidth;
+              let mouseXpercentage = Math.round(
+                (e.activeCoordinate.x / windowWidth) * 100
+              );
+              // @ts-ignore
+              div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
+              div.style.borderRadius = "5px";
+            }
+          }}
+          margin={{
+            top: 5,
+            right: 10,
+            left: 10,
+            bottom: 5,
+          }}
+        >
+          <XAxis
+            dataKey="day"
+            type="category"
+            tickLine={false}
+            axisLine={false}
+          />
+
+          <Tooltip content={<CustomTooltip />} />
+
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="#FFFFFF"
+            activeDot={{ r: 4 }}
+            strokeWidth={2}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }

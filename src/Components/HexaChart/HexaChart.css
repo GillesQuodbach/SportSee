@@ -1,5 +1,7 @@
-.hexachart-component {
+.mini-hexachart-container {
   width: 260px;
   height: 260px;
-  background-color: coral;
+  background-color: #282d30;
+  border-radius: 5px;
+  font-weight: 500;
 }

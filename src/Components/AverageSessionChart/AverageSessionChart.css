@@ -1,7 +1,31 @@
-.linechart-main-container {
+.mini-linechart-container {
+  width: 260px;
+  height: 260px;
   background-color: #ff0000;
   border-radius: 5px;
 }
 
 .linechart-custom-tooltip-container {
+  background-color: #fff;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linechart-custom-tooltip-container {
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.mini-linechart-text {
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.5;
+  margin-top: 30px;
+  margin-left: 40px;
 }
