@@ -1,11 +1,12 @@
 import React from "react";
 import "./User.css";
 
-export default function User() {
+export default function User(props) {
+  console.log(props);
   return (
     <div className="user-greet-container">
       <p className="user-name">
-        Bonjour <b className="name">Thomas</b>
+        Bonjour <b className="name">{props.userName}</b>
       </p>
       <p className="user-greet">
         Félicitation! Vous avez explosé vos objectifs hier ! 👏{" "}

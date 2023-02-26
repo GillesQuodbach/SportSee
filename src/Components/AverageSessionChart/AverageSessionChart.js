@@ -30,7 +30,7 @@ const CustomLegend = ({ payload }) => {
 
 export default function AverageSessionChart() {
   const userAverageSessionsArray = mockedData.USER_AVERAGE_SESSIONS[0].sessions;
-  console.log(userAverageSessionsArray);
+  // console.log(userAverageSessionsArray);
   const userAverageSessionsArrayFormat = userAverageSessionsArray.map(
     (data) => {
       switch (data.day) {

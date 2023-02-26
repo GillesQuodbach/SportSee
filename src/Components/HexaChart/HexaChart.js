@@ -37,6 +37,7 @@ export default function HexaChart() {
     <div className="mini-hexachart-container">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart
+          // margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
           cx="50%"
           cy="50%"
           outerRadius="65%"
