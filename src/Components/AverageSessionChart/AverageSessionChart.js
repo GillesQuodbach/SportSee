@@ -1,15 +1,6 @@
 import React from "react";
 import "./AverageSessionChart.css";
-import {
-  LineChart,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  Line,
-  ResponsiveContainer,
-} from "recharts";
-import mockedData from "../../context/mockedData";
+import { LineChart, XAxis, Tooltip, Line, ResponsiveContainer } from "recharts";
 
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
@@ -28,32 +19,30 @@ const CustomLegend = ({ payload }) => {
   <h1>${payload}</h1>;
 };
 
-export default function AverageSessionChart() {
-  const userAverageSessionsArray = mockedData.USER_AVERAGE_SESSIONS[0].sessions;
-  // console.log(userAverageSessionsArray);
-  const userAverageSessionsArrayFormat = userAverageSessionsArray.map(
-    (data) => {
-      switch (data.day) {
-        case 1:
-          return { ...data, day: "L" };
-        case 2:
-          return { ...data, day: "M" };
+export default function AverageSessionChart(props) {
+  const userAverageSessionsData = props.userAverageSessionsData.sessions;
 
-        case 3:
-          return { ...data, day: "M" };
-        case 4:
-          return { ...data, day: "J" };
-        case 5:
-          return { ...data, day: "V" };
-        case 6:
-          return { ...data, day: "S" };
-        case 7:
-          return { ...data, day: "D" };
-        default:
-          return { ...data };
-      }
+  const userAverageSessionsDataFormat = userAverageSessionsData.map((data) => {
+    switch (data.day) {
+      case 1:
+        return { ...data, day: "L" };
+      case 2:
+        return { ...data, day: "M" };
+
+      case 3:
+        return { ...data, day: "M" };
+      case 4:
+        return { ...data, day: "J" };
+      case 5:
+        return { ...data, day: "V" };
+      case 6:
+        return { ...data, day: "S" };
+      case 7:
+        return { ...data, day: "D" };
+      default:
+        return { ...data };
     }
-  );
+  });
 
   //Transformation des chiffres en lettre du jour de la semaine
 
@@ -63,7 +52,7 @@ export default function AverageSessionChart() {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           className="average-session-linechart"
-          data={userAverageSessionsArrayFormat}
+          data={userAverageSessionsDataFormat}
           onMouseMove={(e) => {
             if (e.isTooltipActive === true) {
               let div = document.querySelector(".average-session-linechart");

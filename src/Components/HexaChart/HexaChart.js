@@ -1,19 +1,18 @@
 import React from "react";
 import "./HexaChart.css";
-import mockedData from "../../context/mockedData";
+
 import {
   Radar,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
 
-export default function HexaChart() {
-  const userRadarchartArray = mockedData.USER_PERFORMANCE[0];
+export default function HexaChart(props) {
+  const userRadarchartData = props.userPerformanceData;
 
-  const userRadarchartArrayKindFormat = userRadarchartArray.data.map((data) => {
+  const userRadarchartArrayKindFormat = userRadarchartData.data.map((data) => {
     switch (data.kind) {
       case 1:
         return { ...data, kind: "Cardio" };
@@ -56,25 +55,4 @@ export default function HexaChart() {
       </ResponsiveContainer>
     </div>
   );
-}
-
-{
-  /* <RadarChart
-width={250}
-height={250}
-cx="50%"
-cy="50%"
-outerRadius="65%"
-data={userRadarchartArrayKindFormat}
->
-<PolarGrid />
-<PolarAngleAxis dataKey="kind" />
-<PolarRadiusAxis />
-<Radar
-  dataKey="value"
-  stroke="#8884d8"
-  fill="#8884d8"
-  fillOpacity={0.6}
-/>
-</RadarChart> */
 }

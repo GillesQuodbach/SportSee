@@ -1,16 +1,17 @@
 import React from "react";
 import "./ScoreChart.css";
-import mockedData from "../../context/mockedData";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
-const userMainDataArray = mockedData.USER_MAIN_DATA[1];
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
-const userScore = [
-  { value: userMainDataArray.todayScore || userMainDataArray.score },
-  { value: 1 - userMainDataArray.todayScore || userMainDataArray.score },
-];
+export default function ScoreChart(props) {
+  console.log(props.userMainData);
 
-export default function ScoreChart() {
+  const userScore = [
+    { value: props.userMainData.todayScore || props.userMainData.score },
+    { value: 1 - props.userMainData.todayScore || props.userMainData.score },
+  ];
+
+  console.log(props.userMainData);
   return (
     <div className="mini-scorechart-container">
       <p className="scorechart-title">Score</p>

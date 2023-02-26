@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -6,18 +6,12 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  Legend,
-  Label,
-  ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
 import "./DailyActivityChart.css";
-import mockedData from "../../context/mockedData";
+
 import blackIcon from "../../Assets/Icons/blackIcon.svg";
 import redIcon from "../../Assets/Icons/redIcon.svg";
-import { DashboardContext } from "../../context/DashboardContext";
-// Xaxis = id parametre
-// Yaxis = caolires brulée et poids
 
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
@@ -30,14 +24,8 @@ const CustomTooltip = ({ payload, active }) => {
   }
   return null;
 };
-
-export default function DailyActivityChart() {
-  const userID = mockedData.USER_ACTIVITY[0].userId; // ici user12
-  const userSessions = mockedData.USER_ACTIVITY[0].sessions; // ici user12
-
-  const [data, setData] = useState(mockedData.USER_ACTIVITY.userId);
-
-  const { dataChart, changeUser, userData } = useContext(DashboardContext);
+export default function DailyActivityChart(props) {
+  const userSessions = props.userActivityData.sessions; // ici user12
 
   //Transformation de la date en id
   for (let i = 0; i < userSessions.length; i++) {

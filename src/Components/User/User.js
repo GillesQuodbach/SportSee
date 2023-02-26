@@ -2,7 +2,6 @@ import React from "react";
 import "./User.css";
 
 export default function User(props) {
-  console.log(props);
   return (
     <div className="user-greet-container">
       <p className="user-name">
