@@ -1,0 +1,76 @@
+.main_container {
+  min-height: 100vh;
+  background-color: grey;
+}
+
+.header {
+  background-color: red;
+  height: 91px;
+}
+
+.body_container {
+  background-color: yellow;
+  min-height: calc(100vh - 91px);
+  display: flex;
+}
+
+.sidebar {
+  background-color: blue;
+  width: 117px;
+}
+
+.user_infos_container {
+  background-color: blueviolet;
+  width: 100%;
+  margin: 65px 100px 65px 100px;
+}
+
+.user_name {
+  background-color: cadetblue;
+  height: 90px;
+}
+
+.user_stats_container {
+  background-color: aqua;
+  display: flex;
+  min-height: calc(100% - 91px);
+}
+
+.summary_container {
+  background-color: coral;
+  margin-left: 30px;
+  width: 258px;
+}
+
+.charts_container {
+  background-color: brown;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.barchart {
+  background-color: darkgoldenrod;
+  min-height: 50%;
+}
+
+.mini_charts_container {
+  background-color: dimgray;
+  height: 50%;
+  display: flex;
+}
+
+.linechart {
+  background-color: darkgreen;
+  width: 100%;
+}
+
+.webchart {
+  background-color: deeppink;
+  width: 100%;
+}
+
+.circlechart {
+  background-color: deepskyblue;
+  width: 100%;
+}
