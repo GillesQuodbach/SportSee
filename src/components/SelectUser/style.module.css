@@ -1,0 +1,16 @@
+.select-user-container {
+  margin: 0;
+  margin-bottom: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-user-container button {
+  padding: 10px 30px;
+  font-size: 38px;
+  font-weight: 700;
+}

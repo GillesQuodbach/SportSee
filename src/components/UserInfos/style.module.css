@@ -1,0 +1,20 @@
+.user_name_container {
+  background-color: cadetblue;
+  height: 90px;
+}
+
+.user_greets {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 24px;
+}
+
+.user_name {
+  color: #ff0101;
+}
+
+.user_congratulation {
+  font-size: 18px;
+  font-weight: 400;
+}

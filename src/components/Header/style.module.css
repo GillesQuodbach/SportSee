@@ -1,0 +1,20 @@
+.header {
+  background-color: #000;
+  height: 91px;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.header_links_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header_link_item {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  list-style-type: none;
+}
