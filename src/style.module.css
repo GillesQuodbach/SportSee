@@ -2,43 +2,8 @@
   min-height: 100vh;
   background-color: grey;
 }
-
 .body_container {
   background-color: yellow;
   min-height: calc(100vh - 91px);
-  display: flex;
-}
-
-.user_infos_container {
-  background-color: blueviolet;
-  width: 100%;
-  margin: 65px 100px 65px 100px;
-}
-
-.user_stats_container {
-  background-color: aqua;
-  display: flex;
-  min-height: calc(100% - 91px);
-}
-
-.summary_container {
-  background-color: coral;
-  margin-left: 30px;
-  width: 258px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.charts_container {
-  background-color: brown;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.mini_charts_container {
-  background-color: dimgray;
-  height: 50%;
   display: flex;
 }

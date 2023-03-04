@@ -12,6 +12,11 @@
   justify-content: space-around;
 }
 
+.header_links_container a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .header_link_item {
   color: #fff;
   font-size: 24px;

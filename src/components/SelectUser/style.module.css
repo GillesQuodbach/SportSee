@@ -1,4 +1,4 @@
-.select-user-container {
+.select_user_container {
   margin: 0;
   margin-bottom: 250px;
   width: 100%;
@@ -9,8 +9,9 @@
   align-items: center;
 }
 
-.select-user-container button {
+.select_user_container button {
   padding: 10px 30px;
   font-size: 38px;
   font-weight: 700;
+  border-radius: 10px;
 }
