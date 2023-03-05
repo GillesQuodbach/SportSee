@@ -1,4 +1,6 @@
-.webchart {
-  background-color: deeppink;
-  width: 100%;
+.mini_hexachart_container {
+  height: 100%;
+  background-color: #282d30;
+  border-radius: 5px;
+  font-weight: 500;
 }

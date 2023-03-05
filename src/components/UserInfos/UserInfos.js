@@ -2,7 +2,7 @@ import React from "react";
 import s from "./style.module.css";
 
 export default function UserInfos(props) {
-  console.log(props.userMainInfos.firstName);
+  // console.log(props.userMainInfos.firstName);
   return (
     <div className={s.user_name_container}>
       <p className={s.user_greets}>

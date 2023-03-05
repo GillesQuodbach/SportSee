@@ -1,4 +1,31 @@
-.summary_item {
-  background-color: deeppink;
-  height: 124px;
+.summary_component {
+  background-color: #fbfbfb;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  border-radius: 5px;
+}
+
+.summary_component_text_container {
+  margin-left: 25px;
+}
+
+.summary_component_img {
+  width: 60px;
+  height: 60px;
+}
+
+.summary_component_text_value,
+.summary_component_text_unit {
+  display: inline;
+  font-size: 20px;
+  font-weight: 700;
+  color: #282d30;
+}
+
+.summary_component_category {
+  font-size: 14px;
+  font-weight: 500;
+  color: #74798c;
 }

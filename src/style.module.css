@@ -1,9 +1,9 @@
 .main_container {
   min-height: 100vh;
-  background-color: grey;
+  /* background-color: grey; */
 }
 .body_container {
-  background-color: yellow;
+  /* background-color: yellow; */
   min-height: calc(100vh - 91px);
   display: flex;
 }

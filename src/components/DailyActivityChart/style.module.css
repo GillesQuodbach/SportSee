@@ -2,3 +2,63 @@
   background-color: yellowgreen;
   height: 50%;
 }
+
+.barchart_main_container {
+  background-color: #fbfbfb;
+  border-radius: 0px 0px 5px 5px;
+  width: 100%;
+  height: 50%;
+  margin-top: 30px;
+}
+
+.barchart_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fbfbfb;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.barchart_header_title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 70px;
+}
+
+.barchart_legend_container {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #74798c;
+  margin-right: 50px;
+}
+
+.barchart_kilo_legend,
+.barchart_calo_legend {
+  display: flex;
+}
+
+.barchart_kilo_legend_text,
+.barchart_calo_legend_text {
+  margin-left: 10px;
+}
+
+.custom_tooltip {
+  width: 40px;
+  height: 65px;
+  background-color: #e60000;
+  color: #fff;
+  padding: 4px 6px 4px 6px;
+  font-size: 7px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+[role="dialog"] {
+  outline: none;
+}

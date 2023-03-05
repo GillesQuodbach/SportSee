@@ -1,33 +1,59 @@
 .user_infos_container {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   width: 100%;
   margin: 65px 100px 65px 100px;
 }
 
 .user_stats_container {
-  background-color: aqua;
+  /* background-color: aqua; */
   display: flex;
-  min-height: calc(100% - 91px);
+  min-height: calc(100% - 141px);
+  margin-top: 50px;
 }
 
 .summary_container {
-  background-color: coral;
+  /* background-color: coral; */
   margin-left: 30px;
-  width: 258px;
+  /* max-width: 258px; */
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
 .charts_container {
-  background-color: brown;
+  background-color: #fbfbfb;
   width: 100%;
   display: flex;
+
+  align-items: center;
   flex-direction: column;
 }
 
 .mini_charts_container {
-  background-color: dimgray;
+  /* background-color: red; */
   height: 50%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  padding-top: 20px;
+  flex-wrap: nowrap;
+}
+
+.lineChart_container {
+  width: 100%;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+
+.webChart_container {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+}
+.radarChart_container {
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
 }
