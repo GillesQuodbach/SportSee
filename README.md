@@ -28,4 +28,4 @@ Micro API provided by OpenClassRooms
 
 ### 3.1 Installation
 
-- Clone the repository [repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) and follow the instructions provided in the Readme file.
+- Clone this [repository](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) and follow the instructions provided in the Readme file.
