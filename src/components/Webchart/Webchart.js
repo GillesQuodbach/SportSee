@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./style.module.css";
+import PropTypes from "prop-types";
 import {
   Radar,
   RadarChart,
@@ -8,6 +9,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * Render a Radarchart with user performance
+ * @params {array} - user performace data
+ * @return {JSX}
+ */
 export default function Webchart(props) {
   // console.log(props.userPerformanceData);
   const userRadarchartData = props.userPerformanceData;
@@ -56,3 +62,7 @@ export default function Webchart(props) {
     </div>
   );
 }
+
+Webchart.propTypes = {
+  props: PropTypes.array,
+};

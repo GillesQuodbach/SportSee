@@ -13,6 +13,14 @@ import protImg from "../../assets/icons/protein.svg";
 import carboImg from "../../assets/icons/carbohydrates.svg";
 import lipidImg from "../../assets/icons/lipids.svg";
 
+/**
+ * Render the dashboard with all user data
+ * @params {array} - userMainInfos
+ * @params {array} - userActivity
+ * @params {array} - userAverageSessionsData
+ * @params {array} - userPerformanceData
+ * @return {JSX}
+ */
 export function Dashboard() {
   const [userMainInfos, setUserMainInfos] = useState([]);
   const [userActivity, setuserActivity] = useState([]);

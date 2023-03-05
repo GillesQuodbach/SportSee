@@ -1,6 +1,12 @@
 import React from "react";
 import s from "./style.module.css";
 import { LineChart, XAxis, Tooltip, Line, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
+/** custom tooltype for user activity barChart
+ * @param  {bool} active
+ * @param  {array} payload
+ * @return {JSX}
+ */
 
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
@@ -15,10 +21,12 @@ const CustomTooltip = ({ payload, active }) => {
   return null;
 };
 
-const CustomLegend = ({ payload }) => {
-  <h1>${payload}</h1>;
-};
-
+/**
+ * Render a linechart with user average activity Data
+ * @params {array} - Average sessions datas
+ * @return {JSX}
+ */
+//Transformation des chiffres en lettres du jour de la semaine
 export default function AverageSessionChart(props) {
   const sessionsDataArray = props.userAverageSessionsData;
   console.log("sessionsDataArray: ", sessionsDataArray);
@@ -43,8 +51,6 @@ export default function AverageSessionChart(props) {
         return { ...data };
     }
   });
-  console.log(userAverageSessionsDataFormat);
-  //Transformation des chiffres en lettre du jour de la semaine
 
   return (
     <div className={s.mini_linechart_container}>
@@ -94,3 +100,7 @@ export default function AverageSessionChart(props) {
     </div>
   );
 }
+
+AverageSessionChart.propTypes = {
+  props: PropTypes.array,
+};

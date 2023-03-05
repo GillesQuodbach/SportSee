@@ -1,6 +1,11 @@
 import React from "react";
 import s from "./style.module.css";
-
+import PropTypes from "prop-types";
+/**
+ * Render a component with summary data
+ * @params {array} - user summary datas
+ * @return {JSX}
+ */
 export default function Summary(props) {
   let value = props.value;
   let formatedValue = new Intl.NumberFormat("en-In", {
@@ -20,3 +25,7 @@ export default function Summary(props) {
     </div>
   );
 }
+
+Summary.propTypes = {
+  props: PropTypes.array,
+};

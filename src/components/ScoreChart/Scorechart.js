@@ -1,6 +1,13 @@
 import React from "react";
 import s from "./style.module.css";
+import PropTypes from "prop-types";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+
+/**
+ * Render a Piechart with user score Data
+ * @params {array} - Average sessions datas
+ * @return {JSX}
+ */
 
 export default function Scorechart(props) {
   // console.log(props.userMainInfos);
@@ -8,7 +15,7 @@ export default function Scorechart(props) {
     { value: props.userMainInfos.todayScore || props.userMainInfos.score },
     { value: 1 - props.userMainInfos.todayScore || props.userMainInfos.score },
   ];
-  console.log(userScore);
+  // console.log(userScore);
   return (
     <div className={s.circlechart}>
       <p className={s.scorechart_title}>Score</p>
@@ -54,3 +61,7 @@ export default function Scorechart(props) {
     </div>
   );
 }
+
+Scorechart.propTypes = {
+  props: PropTypes.array,
+};

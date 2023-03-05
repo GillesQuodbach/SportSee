@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./style.module.css";
-
+import PropTypes from "prop-types";
 import {
   BarChart,
   Bar,
@@ -14,6 +14,11 @@ import {
 import blackIcon from "../../assets/icons/blackIcon.svg";
 import redIcon from "../../assets/icons/redIcon.svg";
 
+/** custom tooltype for user activity barChart
+ * @param  {bool} active
+ * @param  {array} payload
+ * @return {JSX}
+ */
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
     return (
@@ -27,9 +32,15 @@ const CustomTooltip = ({ payload, active }) => {
   }
   return null;
 };
+
+/**
+ * Render a barchart with user daily activity Datas
+ * @params {array} - Daily sessions datas
+ * @return {JSX}
+ */
 export default function DailyActivityChart(props) {
   // console.log(props.userActivity);
-  const userSessions = props.userActivity; // ici user12
+  const userSessions = props.userActivity;
 
   //Transformation de la date en id
   for (let i = 0; i < userSessions.length; i++) {
@@ -125,3 +136,11 @@ export default function DailyActivityChart(props) {
     </>
   );
 }
+
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
+DailyActivityChart.propTypes = {
+  props: PropTypes.array,
+};

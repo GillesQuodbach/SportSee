@@ -6,12 +6,7 @@ import { App } from "./App";
 import { SelectUser } from "./components/SelectUser/SelectUser";
 import { Dashboard } from "./views/Dashboard/Dashboard";
 
-const usersList = [
-  "mockedUserId12",
-  "mockedUserId18",
-  "apiUserId12",
-  "apiUserId18",
-];
+const usersList = ["userId12 🧙", "userId18 👩"];
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
