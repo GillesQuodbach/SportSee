@@ -19,7 +19,8 @@
 ### 2.3 Run the project
 
 - Run the project with `npm start`
-- Open your browther at ([localhost:3001](http://localhost:3001/) !!! CAUTION THIS APP RUN ON PORT 3001 !!!
+- Open your browther at ([localhost:3001](http://localhost:3001/)
+  !!! CAUTION THIS APP RUN ON PORT 3001 !!!
 
 ## 3. Backend
 
