@@ -1,4 +1,9 @@
-// import { getUserActivity,getUserAverageSessions, getUserInfos, getUserPerformance, } from "./apiCall";
+// import {
+//   getUserActivity,
+//   getUserAverageSessions,
+//   getUserInfos,
+//   getUserPerformance,
+// } from "./apiCall";
 import {
   getUserActivity,
   getUserAverageSessions,

@@ -1,17 +1,13 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: `http://localhost:3000/`,
-});
-
 /**
  * Retrieve user activity
- * @param {string} id
+ * @param {number} id
  * @returns {Array}
  */
 export const getUserActivity = async (id) => {
   try {
-    const res = await api.get(`http://localhost:3000/user/${id}/activity`);
+    const res = await axios.get(`REACT_APP_BASE_URL/user/${id}/activity`);
     return res.data;
   } catch (e) {
     console.log(e);
@@ -19,13 +15,13 @@ export const getUserActivity = async (id) => {
 };
 /**
  * Get User Infos
- * @param {string} id
+ * @param {number} id
  * @returns {object}
  */
 
 export const getUserInfos = async (id) => {
   try {
-    const res = await api.get(`http://localhost:3000/user/${id}`);
+    const res = await axios.get(`REACT_APP_BASE_URL/${id}`);
     return res.data;
   } catch (e) {
     console.log(e);
@@ -34,13 +30,13 @@ export const getUserInfos = async (id) => {
 
 /**
  * Get User Performance
- * @param {string} id
+ * @param {number} id
  * @returns {object}
  */
 
 export const getUserPerformance = async (id) => {
   try {
-    const res = await api.get(`http://localhost:3000/user/${id}/performance`);
+    const res = await axios.get(`REACT_APP_BASE_URL/user/${id}/performance`);
     return res.data;
   } catch (e) {
     console.log(e);
@@ -48,14 +44,14 @@ export const getUserPerformance = async (id) => {
 };
 /**
  * Get User Average Session
- * @param {string} id
+ * @param {number} id
  * @returns {object}
  */
 
 export const getUserAverageSessions = async (id) => {
   try {
-    const res = await api.get(
-      `http://localhost:3000/user/${id}/average-sessions`
+    const res = await axios.get(
+      `REACT_APP_BASE_URL/user/${id}/average-sessions`
     );
     return res.data;
   } catch (e) {
