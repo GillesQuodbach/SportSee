@@ -66,7 +66,6 @@ export function Dashboard() {
         const request = await getMockedUserActivity(id);
         setuserActivity(request.data);
       }
-      // console.log(request.data);
     };
     userActivityData();
   }, [id]);
@@ -81,7 +80,6 @@ export function Dashboard() {
         const request = await getMockedUserAverageSessions(id);
         setAverageSessionsData(request.data);
       }
-      // console.log(request.data);
     };
     userAverageSessionsData();
   }, [id]);
@@ -97,7 +95,6 @@ export function Dashboard() {
         const request = await getMockedUserPerformance(id);
         setUserPerformanceData(request.data);
       }
-      // console.log(request.data);
     };
     userPerformanceData();
   }, [id]);
