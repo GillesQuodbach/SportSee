@@ -7,7 +7,6 @@ import DailyActivityChart from "../../components/DailyActivityChart/DailyActivit
 import Webchart from "../../components/Webchart/Webchart";
 import Scorechart from "../../components/ScoreChart/Scorechart";
 import Summary from "../../components/Summary/Summary";
-
 import caloImg from "../../assets/icons/calories.svg";
 import protImg from "../../assets/icons/protein.svg";
 import carboImg from "../../assets/icons/carbohydrates.svg";
@@ -26,7 +25,7 @@ import {
   getMockedUserPerformance,
 } from "../../api/mockedData";
 /**
- * Render the dashboard with all user data
+ * Render the dashboard with all user datas
  * @params {array} - userMainInfos
  * @params {array} - userActivity
  * @params {array} - userAverageSessionsData

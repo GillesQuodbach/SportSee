@@ -9,8 +9,11 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
  * @return {JSX}
  */
 
+const scoreChartMiddle = { value: 1 };
+console.log("scoreChartMiddle: ", scoreChartMiddle);
+
 export default function Scorechart(props) {
-  // console.log(props.userMainInfos);
+  console.log(props.userMainInfos);
   const userScore = [
     {
       value:
@@ -20,6 +23,15 @@ export default function Scorechart(props) {
       value:
         100 - props.userMainInfos.todayScore * 100 ||
         props.userMainInfos.score * 100,
+    },
+  ];
+
+  const userScoreMiddle = [
+    {
+      value: 0,
+    },
+    {
+      value: 100,
     },
   ];
 
@@ -49,6 +61,17 @@ export default function Scorechart(props) {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
+        <Pie
+          data={userScoreMiddle}
+          dataKey={"value"}
+          nameKey="name"
+          innerRadius={0}
+          outerRadius={65}
+          cx="50%"
+          cy="50%"
+          fill="#fff"
+          stroke=""
+        ></Pie>
       </PieChart>
     </div>
   );
