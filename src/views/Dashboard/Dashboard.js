@@ -18,6 +18,13 @@ import {
   getUserInfos,
   getUserPerformance,
 } from "../../api/apiCall";
+
+import {
+  getMockedUserActivity,
+  getMockedUserAverageSessions,
+  getMockedUserInfos,
+  getMockedUserPerformance,
+} from "../../api/mockedData";
 /**
  * Render the dashboard with all user data
  * @params {array} - userMainInfos
@@ -39,9 +46,12 @@ export function Dashboard() {
   useEffect(() => {
     const userMainData = async () => {
       const request = await getUserInfos(id);
-      if (!request) return alert("Main data error");
-      // console.log(request.data);
-      setUserMainInfos(request.data);
+      if (request) {
+        setUserMainInfos(request.data);
+      } else if (!request) {
+        const request = await getMockedUserInfos(id);
+        setUserMainInfos(request.data);
+      }
     };
     userMainData();
   }, [id]);
@@ -50,9 +60,13 @@ export function Dashboard() {
   useEffect(() => {
     const userActivityData = async () => {
       const request = await getUserActivity(id);
-      if (!request) return alert("Activity data error");
+      if (request) {
+        setuserActivity(request.data);
+      } else if (!request) {
+        const request = await getMockedUserActivity(id);
+        setuserActivity(request.data);
+      }
       // console.log(request.data);
-      setuserActivity(request.data);
     };
     userActivityData();
   }, [id]);
@@ -61,9 +75,13 @@ export function Dashboard() {
   useEffect(() => {
     const userAverageSessionsData = async () => {
       const request = await getUserAverageSessions(id);
-      if (!request) return alert("Average sessions data error");
+      if (request) {
+        setAverageSessionsData(request.data);
+      } else if (!request) {
+        const request = await getMockedUserAverageSessions(id);
+        setAverageSessionsData(request.data);
+      }
       // console.log(request.data);
-      setAverageSessionsData(request.data);
     };
     userAverageSessionsData();
   }, [id]);
@@ -72,9 +90,14 @@ export function Dashboard() {
   useEffect(() => {
     const userPerformanceData = async () => {
       const request = await getUserPerformance(id);
-      if (!request) return alert("Performance data error");
+      if (request) {
+        setUserPerformanceData(request.data);
+      }
+      if (!request) {
+        const request = await getMockedUserPerformance(id);
+        setUserPerformanceData(request.data);
+      }
       // console.log(request.data);
-      setUserPerformanceData(request.data);
     };
     userPerformanceData();
   }, [id]);

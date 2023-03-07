@@ -1,4 +1,4 @@
-const USER_MAIN_DATA = [
+export const USER_MAIN_DATA = [
   {
     id: 12,
     userInfos: {
@@ -31,7 +31,7 @@ const USER_MAIN_DATA = [
   },
 ];
 
-const USER_ACTIVITY = [
+export const USER_ACTIVITY = [
   {
     userId: 12,
     sessions: [
@@ -114,7 +114,7 @@ const USER_ACTIVITY = [
   },
 ];
 
-const USER_AVERAGE_SESSIONS = [
+export const USER_AVERAGE_SESSIONS = [
   {
     userId: 12,
     sessions: [
@@ -183,7 +183,7 @@ const USER_AVERAGE_SESSIONS = [
   },
 ];
 
-const USER_PERFORMANCE = [
+export const USER_PERFORMANCE = [
   {
     userId: 12,
     kind: {
@@ -260,62 +260,62 @@ const USER_PERFORMANCE = [
   },
 ];
 
-// // /**
-// //  * Get user infos
-// //  *
-// //  * @param {number} id User id
-// //  * @returns {object} Response
-// //  */
-// export const getUserInfos = async (id) => {
-//   try {
-//     const res = USER_MAIN_DATA.find((el) => el.id == id);
-//     return { data: res };
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
-
 // /**
-//  * Get user activity
+//  * Get user infos
 //  *
 //  * @param {number} id User id
 //  * @returns {object} Response
 //  */
-// export const getUserActivity = async (id) => {
-//   try {
-//     const res = USER_ACTIVITY.find((el) => el.userId == id);
-//     return { data: res };
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
+export const getMockedUserInfos = async (id) => {
+  try {
+    const res = USER_MAIN_DATA.find((el) => el.id == id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-// /**
-//  * Get user average session
-//  *
-//  * @param {number} id User id
-//  * @returns {object} Response
-//  */
-// export const getUserAverageSessions = async (id) => {
-//   try {
-//     const res = USER_AVERAGE_SESSIONS.find((el) => el.userId == id);
-//     return { data: res };
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
+/**
+ * Get user activity
+ *
+ * @param {number} id User id
+ * @returns {object} Response
+ */
+export const getMockedUserActivity = async (id) => {
+  try {
+    const res = USER_ACTIVITY.find((el) => el.userId == id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-// /**
-//  * Get user performance
-//  *
-//  * @param {number} id User id
-//  * @returns {object} Response
-//  */
-// export const getUserPerformance = async (id) => {
-//   try {
-//     const res = USER_PERFORMANCE.find((el) => el.userId == id);
-//     return { data: res };
-//   } catch (e) {
-//     console.log(e);
-//   }
-// };
+/**
+ * Get user average session
+ *
+ * @param {number} id User id
+ * @returns {object} Response
+ */
+export const getMockedUserAverageSessions = async (id) => {
+  try {
+    const res = USER_AVERAGE_SESSIONS.find((el) => el.userId == id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+/**
+ * Get user performance
+ *
+ * @param {number} id User id
+ * @returns {object} Response
+ */
+export const getMockedUserPerformance = async (id) => {
+  try {
+    const res = USER_PERFORMANCE.find((el) => el.userId == id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};

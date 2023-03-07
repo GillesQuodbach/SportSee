@@ -12,7 +12,7 @@ export default function UserInfos(props) {
     <div className={s.user_name_container}>
       <p className={s.user_greets}>
         Bonjour
-        <span className={s.user_name}>{props.userMainInfos.firstName}</span>
+        <span className={s.user_name}> {props.userMainInfos.firstName}</span>
       </p>
       <p className={s.user_congratulation}>
         Félicitation ! Vous avez explosé vos objectifs hier 👏
