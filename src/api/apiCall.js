@@ -7,7 +7,9 @@ import axios from "axios";
  */
 export const getUserActivity = async (id) => {
   try {
-    const res = await axios.get(`REACT_APP_BASE_URL/user/${id}/activity`);
+    const res = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/user/${id}/activity`
+    );
     return res.data;
   } catch (e) {
     console.log(e);
@@ -21,7 +23,7 @@ export const getUserActivity = async (id) => {
 
 export const getUserInfos = async (id) => {
   try {
-    const res = await axios.get(`REACT_APP_BASE_URL/${id}`);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/user/${id}`);
     return res.data;
   } catch (e) {
     console.log(e);
@@ -36,7 +38,9 @@ export const getUserInfos = async (id) => {
 
 export const getUserPerformance = async (id) => {
   try {
-    const res = await axios.get(`REACT_APP_BASE_URL/user/${id}/performance`);
+    const res = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/user/${id}/performance`
+    );
     return res.data;
   } catch (e) {
     console.log(e);
@@ -51,7 +55,7 @@ export const getUserPerformance = async (id) => {
 export const getUserAverageSessions = async (id) => {
   try {
     const res = await axios.get(
-      `REACT_APP_BASE_URL/user/${id}/average-sessions`
+      `${process.env.REACT_APP_BASE_URL}/user/${id}/average-sessions`
     );
     return res.data;
   } catch (e) {

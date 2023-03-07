@@ -7,12 +7,17 @@ import DailyActivityChart from "../../components/DailyActivityChart/DailyActivit
 import Webchart from "../../components/Webchart/Webchart";
 import Scorechart from "../../components/ScoreChart/Scorechart";
 import Summary from "../../components/Summary/Summary";
-import { getData } from "../../api/getData";
+
 import caloImg from "../../assets/icons/calories.svg";
 import protImg from "../../assets/icons/protein.svg";
 import carboImg from "../../assets/icons/carbohydrates.svg";
 import lipidImg from "../../assets/icons/lipids.svg";
-
+import {
+  getUserActivity,
+  getUserAverageSessions,
+  getUserInfos,
+  getUserPerformance,
+} from "../../api/apiCall";
 /**
  * Render the dashboard with all user data
  * @params {array} - userMainInfos
@@ -33,7 +38,7 @@ export function Dashboard() {
   //*? MAIN DATA REQUEST
   useEffect(() => {
     const userMainData = async () => {
-      const request = await getData("USER_MAIN_DATA", id);
+      const request = await getUserInfos(id);
       if (!request) return alert("Main data error");
       // console.log(request.data);
       setUserMainInfos(request.data);
@@ -44,7 +49,7 @@ export function Dashboard() {
   //*? ACTIVITY DATA REQUEST
   useEffect(() => {
     const userActivityData = async () => {
-      const request = await getData("USER_ACTIVITY", id);
+      const request = await getUserActivity(id);
       if (!request) return alert("Activity data error");
       // console.log(request.data);
       setuserActivity(request.data);
@@ -55,7 +60,7 @@ export function Dashboard() {
   //*? AVERAGE SESSIONS DATA REQUEST
   useEffect(() => {
     const userAverageSessionsData = async () => {
-      const request = await getData("USER_AVERAGE_SESSIONS", id);
+      const request = await getUserAverageSessions(id);
       if (!request) return alert("Average sessions data error");
       // console.log(request.data);
       setAverageSessionsData(request.data);
@@ -66,7 +71,7 @@ export function Dashboard() {
   //*? PERFORMANCE DATA REQUEST
   useEffect(() => {
     const userPerformanceData = async () => {
-      const request = await getData("USER_PERFORMANCE", id);
+      const request = await getUserPerformance(id);
       if (!request) return alert("Performance data error");
       // console.log(request.data);
       setUserPerformanceData(request.data);
