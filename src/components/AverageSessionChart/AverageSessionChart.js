@@ -1,6 +1,15 @@
 import React from "react";
 import s from "./style.module.css";
-import { LineChart, XAxis, Tooltip, Line, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Area,
+  AreaChart,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Line,
+  ResponsiveContainer,
+} from "recharts";
 import PropTypes from "prop-types";
 /** custom tooltype for user activity barChart
  * @param  {bool} active
@@ -79,10 +88,19 @@ export default function AverageSessionChart(props) {
           }}
         >
           <XAxis
+            label={{ color: "red" }}
             dataKey="day"
+            height={40}
             type="category"
             tickLine={false}
             axisLine={false}
+            stroke="#FF0000"
+            tick={{
+              fill: "#fff",
+              fontSize: 14,
+              fontWeight: 500,
+              opacity: 0.5,
+            }}
           />
 
           <Tooltip content={<CustomTooltip />} />

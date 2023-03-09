@@ -45,6 +45,11 @@
   height: 100%;
   /* background-color: aquamarine; */
 }
+@media screen and (min-width: 1023px) and (max-width: 1439px) {
+  .lineChart_container {
+    height: 80%;
+  }
+}
 
 .webChart_container {
   width: 100%;

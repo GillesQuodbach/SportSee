@@ -45,34 +45,38 @@ export default function Scorechart(props) {
         <p className={s.scorechart_score_text1}>de votre</p>
         <p className={s.scorechart_score_text2}>objectif</p>
       </div>
-
-      <PieChart width={260} height={300}>
-        <Pie
-          data={userScore}
-          innerRadius={65}
-          outerRadius={80}
-          paddingAngle={0}
-          startAngle={90}
-          endAngle={360}
-          dataKey="value"
-          cornerRadius={10}
-        >
-          {userScore.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Pie
-          data={userScoreMiddle}
-          dataKey={"value"}
-          nameKey="name"
-          innerRadius={0}
-          outerRadius={65}
-          cx="50%"
-          cy="50%"
-          fill="#fff"
-          stroke=""
-        ></Pie>
-      </PieChart>
+      <ResponsiveContainer>
+        <PieChart width={260} height={300}>
+          <Pie
+            data={userScore}
+            innerRadius={65}
+            outerRadius={80}
+            paddingAngle={0}
+            startAngle={90}
+            endAngle={360}
+            dataKey="value"
+            cornerRadius={10}
+          >
+            {userScore.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
+          <Pie
+            data={userScoreMiddle}
+            dataKey={"value"}
+            nameKey="name"
+            innerRadius={0}
+            outerRadius={65}
+            cx="50%"
+            cy="50%"
+            fill="#fff"
+            stroke=""
+          ></Pie>
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 }
