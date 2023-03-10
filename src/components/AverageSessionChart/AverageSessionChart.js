@@ -88,6 +88,12 @@ export default function AverageSessionChart(props) {
             bottom: 5,
           }}
         >
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="1.2" y2="0">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#FFFFFF" stopOpacity={1} />
+            </linearGradient>
+          </defs>
           <XAxis
             label={{ color: "red" }}
             dataKey="day"
@@ -107,9 +113,9 @@ export default function AverageSessionChart(props) {
           <Tooltip content={<CustomTooltip />} />
 
           <Line
-            type="monotone"
+            type="basis"
             dataKey="sessionLength"
-            stroke="#fff"
+            stroke="url(#colorUv)"
             dot={false}
             activeDot={{ r: 4 }}
             strokeWidth={2}
