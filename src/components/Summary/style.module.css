@@ -1,6 +1,7 @@
 .summary_component {
   background-color: #fbfbfb;
-  max-width: 256px;
+  width: 256px;
+  height: 124px;
   display: flex;
   align-items: center;
   padding: 1.3rem;

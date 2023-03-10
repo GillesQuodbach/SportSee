@@ -3,7 +3,6 @@
   /* background-color: grey; */
 }
 .body_container {
-  background-color: yellow;
   min-height: calc(100vh - 91px);
   display: flex;
 }

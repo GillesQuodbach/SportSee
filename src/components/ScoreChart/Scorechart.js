@@ -46,7 +46,7 @@ export default function Scorechart(props) {
         <p className={s.scorechart_score_text2}>objectif</p>
       </div>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart width={100} height={100}>
+        <PieChart>
           <Pie
             data={userScore}
             innerRadius={65}

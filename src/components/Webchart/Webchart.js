@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import s from "./style.module.css";
 import PropTypes from "prop-types";
 import {
@@ -14,7 +14,38 @@ import {
  * @params {array} - user performace data
  * @return {JSX}
  */
+
+function useWindowSize() {
+  const isClient = typeof window === "object";
+
+  function getSize() {
+    return {
+      width: isClient ? window.innerWidth : undefined,
+      height: isClient ? window.innerHeight : undefined,
+    };
+  }
+
+  const [windowSize, setWindowSize] = useState(getSize);
+
+  useEffect(() => {
+    if (!isClient) {
+      return false;
+    }
+
+    function handleResize() {
+      setWindowSize(getSize());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount and unmount
+
+  return windowSize;
+}
+
 export default function Webchart(props) {
+  const screenWidth = useWindowSize().width;
+  console.log("screenWidth: ", screenWidth);
   // console.log(props.userPerformanceData);
   const userRadarchartData = props.userPerformanceData;
 
@@ -39,27 +70,50 @@ export default function Webchart(props) {
   });
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadarChart
-        margin={{ top: 5, right: 10, bottom: 5, left: 5 }}
-        cx="50%"
-        cy="50%"
-        outerRadius="50%"
-        data={userRadarchartArrayKindFormat}
-      >
-        <PolarGrid />
-        <PolarAngleAxis
-          dataKey="kind"
-          tick={{ fontSize: 10, fill: "#fff", fontWeight: 500 }}
-        />
+    <ResponsiveContainer width="90%" height="100%">
+      {screenWidth <= 1100 ? (
+        <RadarChart
+          cx="55%"
+          cy="50%"
+          outerRadius="55%"
+          data={userRadarchartArrayKindFormat}
+        >
+          <PolarGrid />
+          <PolarAngleAxis
+            tickLine={false}
+            dataKey="kind"
+            tick={{ fontSize: "0.601rem", fill: "#fff", fontWeight: 500 }}
+          />
 
-        <Radar
-          dataKey="value"
-          stroke="#FF0101B2"
-          fill="#FF0101B2"
-          fillOpacity={0.7}
-        />
-      </RadarChart>
+          <Radar
+            dataKey="value"
+            stroke="#FF0101"
+            fill="#FF0101"
+            fillOpacity={0.7}
+          />
+        </RadarChart>
+      ) : (
+        <RadarChart
+          cx="55%"
+          cy="50%"
+          outerRadius="55%"
+          data={userRadarchartArrayKindFormat}
+        >
+          <PolarGrid />
+          <PolarAngleAxis
+            tickLine={false}
+            dataKey="kind"
+            tick={{ fontSize: "0.6rem", fill: "#fff", fontWeight: 500 }}
+          />
+
+          <Radar
+            dataKey="value"
+            stroke="#FF0101"
+            fill="#FF0101"
+            fillOpacity={0.7}
+          />
+        </RadarChart>
+      )}
     </ResponsiveContainer>
   );
 }
