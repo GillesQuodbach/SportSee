@@ -39,27 +39,25 @@ export default function Webchart(props) {
   });
 
   return (
-    <div className={s.mini_hexachart_container}>
-      <ResponsiveContainer width="100%" height="100%">
-        <RadarChart
-          // margin={{ top: 5, right: 5, bottom: 5, left: 5 }}
-          cx="50%"
-          cy="50%"
-          outerRadius="65%"
-          data={userRadarchartArrayKindFormat}
-        >
-          <PolarGrid />
-          <PolarAngleAxis dataKey="kind" tick={{ fontSize: 10 }} />
+    <ResponsiveContainer width="100%" height="100%">
+      <RadarChart
+        margin={{ top: 5, right: 10, bottom: 5, left: 5 }}
+        cx="50%"
+        cy="50%"
+        outerRadius="50%"
+        data={userRadarchartArrayKindFormat}
+      >
+        <PolarGrid />
+        <PolarAngleAxis dataKey="kind" tick={{ fontSize: 10 }} />
 
-          <Radar
-            dataKey="value"
-            stroke="#FF0101B2"
-            fill="#FF0101B2"
-            fillOpacity={0.7}
-          />
-        </RadarChart>
-      </ResponsiveContainer>
-    </div>
+        <Radar
+          dataKey="value"
+          stroke="#FF0101B2"
+          fill="#FF0101B2"
+          fillOpacity={0.7}
+        />
+      </RadarChart>
+    </ResponsiveContainer>
   );
 }
 

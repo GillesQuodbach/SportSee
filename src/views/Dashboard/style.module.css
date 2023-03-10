@@ -1,63 +1,74 @@
 .user_infos_container {
-  /* background-color: blueviolet; */
+  background-color: blueviolet;
   width: 100%;
   margin: 65px 100px 65px 100px;
 }
 
 .user_stats_container {
-  /* background-color: aqua; */
+  background-color: aqua;
+  width: 100%;
+  min-height: calc(100% - 120px);
+  max-height: calc(100% - 120px);
   display: flex;
-  min-height: calc(100% - 141px);
+  /* min-height: calc(100% - 141px); */
   margin-top: 50px;
 }
 
 .summary_container {
-  /* background-color: coral; */
+  background-color: coral;
   margin-left: 30px;
   /* max-width: 258px; */
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 50px;
+  justify-content: space-between;
 }
 
 .charts_container {
-  width: 100%;
   display: flex;
 
+  flex: 5;
+  background-color: orange;
   align-items: center;
   flex-direction: column;
 }
 
 .mini_charts_container {
-  /* background-color: red; */
-  height: 50%;
+  /* background-color: yellowgreen; */
+  min-height: 263px;
+  max-height: 263px;
   width: 100%;
+  margin-top: auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+
   gap: 20px;
-  padding-top: 20px;
+  padding-top: 30px;
   flex-wrap: nowrap;
 }
 
 .lineChart_container {
   width: 100%;
-  height: 100%;
-  /* background-color: aquamarine; */
-}
-@media screen and (min-width: 1023px) and (max-width: 1439px) {
-  .lineChart_container {
-    height: 80%;
-  }
+
+  background-color: red;
+  border-radius: 5px;
 }
 
 .webChart_container {
   width: 100%;
-  height: 100%;
-  /* background-color: yellow; */
+  min-height: 100%;
+  background-color: #282d30;
+  border-radius: 5px;
 }
+
+.webChart_container svg {
+  display: block;
+  min-width: 100%;
+}
+
 .radarChart_container {
   width: 100%;
-  height: 100%;
-  /* background-color: blue; */
+  background-color: blue;
+  border-radius: 5px;
 }

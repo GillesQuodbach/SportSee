@@ -1,5 +1,6 @@
 .user_name_container {
   /* background-color: cadetblue; */
+  width: max-content;
   height: 90px;
 }
 

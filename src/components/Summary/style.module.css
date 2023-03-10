@@ -1,9 +1,9 @@
 .summary_component {
   background-color: #fbfbfb;
-  height: 125px;
+  max-width: 256px;
   display: flex;
   align-items: center;
-  padding: 32px;
+  padding: 1.3rem;
   border-radius: 5px;
 }
 
@@ -11,15 +11,15 @@
   margin-left: 25px;
 }
 
-.summary_component_img {
+/* .summary_component_img {
   width: 60px;
   height: 60px;
-}
+} */
 
 .summary_component_text_value,
 .summary_component_text_unit {
   display: inline;
-  font-size: 20px;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #282d30;
 }

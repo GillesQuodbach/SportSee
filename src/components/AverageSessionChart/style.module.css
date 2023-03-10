@@ -1,9 +1,9 @@
-.mini_linechart_container {
+/* .mini_linechart_container {
+  width: 50px;
   height: 100%;
   background-color: #ff0000;
   border-radius: 5px;
-  padding: 15px;
-}
+} */
 
 .linechart_custom_tooltip_container {
   background-color: #fff;

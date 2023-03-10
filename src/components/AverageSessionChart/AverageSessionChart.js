@@ -62,10 +62,11 @@ export default function AverageSessionChart(props) {
   });
 
   return (
-    <div className={s.mini_linechart_container}>
-      <p className={s.mini_linechart_text}>Durée moyenne des sessions</p>
-      <ResponsiveContainer width="100%" height="100%">
+    <>
+      <span className={s.mini_linechart_text}>Durée moyennes des sessions</span>
+      <ResponsiveContainer>
         <LineChart
+          height={200}
           className="average_session_linechart"
           data={userAverageSessionsDataFormat}
           onMouseMove={(e) => {
@@ -115,7 +116,7 @@ export default function AverageSessionChart(props) {
           />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 }
 

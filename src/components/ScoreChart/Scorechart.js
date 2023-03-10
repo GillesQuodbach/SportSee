@@ -36,17 +36,17 @@ export default function Scorechart(props) {
   ];
 
   const COLORS = ["#FF0000", "#FBFBFB"];
-  // console.log(userScore);
+  console.log(userScore);
   return (
-    <div className={s.circlechart}>
-      <p className={s.scorechart_title}>Score</p>
+    <>
+      {/* <p className={s.scorechart_title}>Score</p>
       <div className={s.scorechart_percentage_container}>
         <p className={s.scorechart_score}>{userScore[0].value}%</p>
         <p className={s.scorechart_score_text1}>de votre</p>
         <p className={s.scorechart_score_text2}>objectif</p>
-      </div>
-      <ResponsiveContainer>
-        <PieChart width={260} height={300}>
+      </div> */}
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={100} height={100}>
           <Pie
             data={userScore}
             innerRadius={65}
@@ -77,7 +77,7 @@ export default function Scorechart(props) {
           ></Pie>
         </PieChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 }
 
