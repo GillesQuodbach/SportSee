@@ -48,7 +48,10 @@ export default function Webchart(props) {
         data={userRadarchartArrayKindFormat}
       >
         <PolarGrid />
-        <PolarAngleAxis dataKey="kind" tick={{ fontSize: 10 }} />
+        <PolarAngleAxis
+          dataKey="kind"
+          tick={{ fontSize: 10, fill: "#fff", fontWeight: 500 }}
+        />
 
         <Radar
           dataKey="value"
