@@ -39,12 +39,12 @@ export default function Scorechart(props) {
   console.log(userScore);
   return (
     <>
-      {/* <p className={s.scorechart_title}>Score</p>
+      <p className={s.scorechart_title}>Score</p>
       <div className={s.scorechart_percentage_container}>
         <p className={s.scorechart_score}>{userScore[0].value}%</p>
         <p className={s.scorechart_score_text1}>de votre</p>
         <p className={s.scorechart_score_text2}>objectif</p>
-      </div> */}
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={100} height={100}>
           <Pie

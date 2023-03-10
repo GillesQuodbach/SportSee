@@ -1,15 +1,14 @@
-/* .scorechart_title {
-  position: absolute; 
+.scorechart_title {
+  position: absolute;
   top: 0;
   font-size: 15px;
   font-weight: 500;
-  right: 85%;
+  left: 20px;
   margin-top: 20px;
   z-index: 9999;
-}  */
+}
 
-/* .scorechart_percentage_container {
-  text-align: center;
+.scorechart_percentage_container {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -19,9 +18,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-left: 100px;
-  margin-top: 100px;
-} */
+}
 
 .scorechart_score {
   font-size: 15px;
