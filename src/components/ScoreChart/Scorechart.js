@@ -10,10 +10,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
  */
 
 const scoreChartMiddle = { value: 1 };
-console.log("scoreChartMiddle: ", scoreChartMiddle);
 
 export default function Scorechart(props) {
-  console.log(props.userMainInfos);
   const userScore = [
     {
       value:
@@ -36,7 +34,7 @@ export default function Scorechart(props) {
   ];
 
   const COLORS = ["#FF0000", "#FBFBFB"];
-  console.log(userScore);
+
   return (
     <>
       <p className={s.scorechart_title}>Score</p>

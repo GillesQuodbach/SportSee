@@ -45,8 +45,7 @@ function useWindowSize() {
 
 export default function Webchart(props) {
   const screenWidth = useWindowSize().width;
-  console.log("screenWidth: ", screenWidth);
-  // console.log(props.userPerformanceData);
+
   const userRadarchartData = props.userPerformanceData;
 
   const userRadarchartArrayKindFormat = userRadarchartData.map((data) => {

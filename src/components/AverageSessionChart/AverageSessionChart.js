@@ -1,15 +1,6 @@
 import React from "react";
 import s from "./style.module.css";
-import {
-  LineChart,
-  Area,
-  AreaChart,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Line,
-  ResponsiveContainer,
-} from "recharts";
+import { LineChart, XAxis, Tooltip, Line, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 /** custom tooltype for user activity barChart
  * @param  {bool} active
@@ -38,7 +29,7 @@ const CustomTooltip = ({ payload, active }) => {
 //Transformation des chiffres en lettres du jour de la semaine
 export default function AverageSessionChart(props) {
   const sessionsDataArray = props.userAverageSessionsData;
-  console.log("sessionsDataArray: ", sessionsDataArray);
+
   const userAverageSessionsDataFormat = sessionsDataArray.map((data) => {
     switch (data.day) {
       case 1:
